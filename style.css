@@ -1,0 +1,84 @@
+:root {
+    --largeur_banner :34%;
+    --marge_banner : calc( (100% - var(--largeur_banner)) / 2);
+
+}
+
+@font-face {
+    font-family: "font_morphosia"; 
+    src: url("fonts/KOMIKAB_.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+    color : #E22B83;
+}
+
+strong {
+    color : #E22B83;
+}
+
+mark {
+    background-color: none;
+    color : #8A2BE2;
+    border-radius: 0.3em;
+    background-color: white;
+}
+
+.main_police {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: auto;
+  font-style: auto;
+}
+
+.main_title {
+    font-family: "Bruno Ace SC", sans-serif;
+    text-align: center;
+    font-size: 3em;
+    color : white;
+
+}
+
+.my_link {
+    text-decoration: none;
+    font-weight: 500;
+    border : 0.01em #8A2BE2 solid;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: #E22B83;
+}
+
+.main_menu {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    color: #F4C2C2;
+}
+
+body {
+    background-color: #121212;
+    color : #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+}
+
+.banner {
+    
+    background: linear-gradient(#8A2BE2,#E22B83,#8A2BE2);
+    border-radius: 10em;
+    width: var(--largeur_banner);
+    margin-left: var(--marge_banner);
+}
+
+.my_link:hover {
+    text-decoration: none;
+    font-weight: 500;
+    border : 0.01em #E22B83 solid;
+    color : #E22B83;
+    background-color: #83E22B;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.logo_morphosia {
+    font-family: "font_morphosia", sans-serif; /* "sans-serif" est une solution de secours au cas où */
+}
