@@ -1,10 +1,15 @@
 :root {
-    --my_pink : #FC53B0;
-    --my_purple : #8A2BE2;
+    --my_pink :  #8A2BE2;
+    --my_purple : #006D77;
     --my_black : black;
     --my_white : white;
     --too_dark_pink : #E22B83;
     --too_light_black : #121212;
+
+    --dark_duck_green : #006D77;
+    --cyber_green : #00F5D4;
+    --electrik_green : #2EE5B6;
+
 }
 
 @font-face {
@@ -20,7 +25,7 @@ h1 {
     font-size: 3em;
     color : var(--my_white);
 
-    background: linear-gradient(var(--my_purple),var(--my_pink),var(--my_purple));
+    background: linear-gradient(var(--electrik_green),var(--my_pink),var(--electrik_green));
     border-radius: 10em;
     width: 34%;
     margin : auto; 
@@ -134,4 +139,3 @@ body {
 .logo_subphoria{
     font-family: "Bruno Ace SC", sans-serif;
 }
-
