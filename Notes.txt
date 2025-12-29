@@ -1,0 +1,2 @@
+Corrigez les bug d'image pas caller au bonne endroit de la page
+corriger le bug de pied de page sur les dates
