@@ -1,0 +1,4 @@
+Corrigez les bug d'image pas caller au bonne endroit de la page
+corriger le bug de pied de page sur les dates
+bug sur la page date de morphosia, le dernier lien de nav renvoie vers morphosia au lieu de Subphoria
+corriger et réécrire tout les titre de head, c-a-d les titre dans l'onglet du navigateur
