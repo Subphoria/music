@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Gère mieux les tailles des boîtes */
+}
+
+body {
+    background-color: black; /* Définit la couleur de fond de base */
+}
+
+@font-face {
+    font-family: "font_morphosia"; 
+    src: url("../fonts/KOMIKAB_.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.police_sub {
+    font-family: "Bruno Ace SC", sans-serif;
+}
+
+.police_morph {
+    font-family: "font_morphosia", sans-serif;
+}
+
+/* --- 1. LE CONTENEUR PRINCIPAL --- */
+.split-container {
+    display: flex;          /* Met les éléments côte à côte */
+    width: 100%;            /* Largeur totale */
+    height: 100vh;          /* Hauteur totale de l'écran */
+    overflow: hidden;       /* Empêche les scrollbars indésirables */
+}
+
+/* --- 2. STYLE COMMUN AUX DEUX COTÉS --- */
+.split-side {
+    position: relative;
+    flex: 1;                /* "flex: 1" signifie qu'ils partagent l'espace équitablement (50/50) */
+    display: flex;          /* Pour centrer le texte à l'intérieur */
+    justify-content: center;
+    align-items: center;
+    
+    /* Transition fluide pour l'effet "accordéon" */
+    transition: flex 0.6s ease-in-out; 
+    
+    /* IMPORTANT : Gestion de l'image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Si le bloc devient tout petit, on cache le texte pour pas qu'il dépasse */
+    overflow: hidden; 
+}
+
+/* --- 3. LES IMAGES DE FOND --- */
+.side-sub {
+    /* Image ou couleur par défaut pour Subphoria */
+    background-image: url('../images/subphoria_kiss_party_mix.jpg'); 
+    background-color: #111; /* Couleur de secours */
+}
+
+.side-morph {
+    /* Image ou couleur par défaut pour Morphosia */
+    background-image: url('../images/morph_background.jpg');
+    background-color: #222; /* Couleur de secours */
+}
+
+/* --- 4. STYLE DES TITRES (H1) --- */
+.split-side h1 {
+    z-index: 10;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne pendant l'animation */
+    /* Transition pour faire disparaître le titre proprement */
+    transition: opacity 0.3s ease;
+}
+
+.split-side h1 a {
+    text-decoration: none;
+    color: white;
+    font-size: 4rem; /* Ajustez selon vos goûts */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Ombre pour lisibilité sur l'image */
+}
+
+/* --- 5. L'INTERACTION (HOVER SUR LE TEXTE UNIQUEMENT) --- */
+
+/* CAS 1 : On survole le TEXTE de SUBPHORIA */
+
+/* On cible le bloc .side-sub, mais SEULEMENT si son H1 est survolé */
+.split-side.side-sub:has(h1:hover) {
+    flex: 10; /* Le bloc s'agrandit */
+}
+
+/* On doit aussi dire à l'autre titre (Morphosia) de disparaître */
+/* Si le conteneur global voit que le titre Subphoria est survolé... */
+.split-container:has(#bloc-sub h1:hover) #bloc-morph h1 {
+    opacity: 0;
+    transition: opacity 0.2s; /* Disparition rapide */
+}
+
+
+/* CAS 2 : On survole le TEXTE de MORPHOSIA */
+
+/* On cible le bloc .side-morph, mais SEULEMENT si son H1 est survolé */
+.split-side.side-morph:has(h1:hover) {
+    flex: 10; /* Le bloc s'agrandit */
+}
+
+/* On cache le titre Subphoria */
+.split-container:has(#bloc-morph h1:hover) #bloc-sub h1 {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+@media screen and (max-width: 992px) {
+    
+    /* 1. On change la direction : Colonne au lieu de Ligne */
+    .split-container {
+        flex-direction: column;
+    }
+
+    /* 2. On bloque les tailles */
+    /* On force les deux blocs à rester à 50% de hauteur chacun */
+    .split-side {
+        flex: 1 !important; /* Le !important écrase les règles de survol du PC */
+        width: 100%;
+        min-height: 50vh; /* Sécurité pour que chaque bloc fasse la moitié de l'écran */
+    }
+
+    /* 3. On désactive les animations d'agrandissement */
+    /* Même si on touche l'écran, la taille ne change pas */
+    .split-side:hover,
+    .split-side:has(h1:hover) {
+        flex: 1 !important;
+    }
+
+    /* 4. On garde les titres toujours visibles */
+    /* On empêche le titre opposé de disparaître quand on touche l'autre */
+    .split-container:has(#bloc-sub h1:hover) #bloc-morph h1,
+    .split-container:has(#bloc-morph h1:hover) #bloc-sub h1 {
+        opacity: 1 !important;
+    }
+
+    /* 5. Ajustement de la taille du texte pour mobile */
+    .split-side h1 a {
+        font-size: 2.5rem; /* Un peu plus petit pour que ça rentre bien */
+    }
+}

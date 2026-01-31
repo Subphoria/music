@@ -1,0 +1,442 @@
+@font-face {
+    font-family: "font_morphosia"; 
+    src: url("../fonts/KOMIKAB_.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* On supprime les marges par défaut du body */
+body {
+    margin: auto;
+    padding: auto;
+    width: 98%;
+    /* Pas de padding ici car vous vouliez cibler le main */
+}
+
+/* C'est la règle CLÉ pour le style.
+   On groupe main, header et footer pour qu'ils aient exactement la même largeur
+   et soient alignés verticalement.
+*/
+main, header, footer {
+    width: 100%;          /* Prend toute la largeur sur mobile */
+    margin: 0 auto;       /* Centre le bloc horizontalement */
+    
+    /* Le padding latéral "stylé" */
+    padding-left: 10px;   
+    padding-right: 10px;
+    
+    box-sizing: border-box; /* Important pour les calculs de taille */
+}
+
+main {
+    /* Espace généreux en haut et en bas pour mettre en valeur le contenu */
+    padding-top: 60px; 
+    padding-bottom: 80px; 
+    
+    /* Assure que le footer ne remonte pas trop haut si la page est vide */
+    min-height: 60vh; 
+    
+    /* Pour un texte agréable à lire */
+    text-align: justify; 
+}
+
+h1 {
+    font-family: "Bruno Ace SC", sans-serif;
+    text-align: center;
+    font-size: 3em;
+    color : var(--color_1);
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h2 {
+    color : var(--color_1);
+    font-size: 3em;
+    text-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+    margin : auto;
+}
+
+strong {
+    color : var(--color_1);
+}
+
+mark {
+    background-color: none;
+    color : var(--my_black);
+    border-radius: 0.3em;
+    background-color: var(--color_1);
+    text-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    background: var(--my_black);
+    color: var(--color_1);
+    font-weight: bold;
+    border-bottom: solid var(--color_1) 0.3em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header h1 {
+    margin-right: auto;
+    padding: 0;
+}
+
+header nav {
+    margin-left: auto;
+}
+
+footer {
+    background: var(--color_1);
+    color: var(--my_black);
+    font-weight: bold;
+    /* border-radius: 0.5em;
+    padding-top : 0.1%;
+    padding-bottom : 0.1%;
+    padding-left : 0.5%;
+    padding-right : 0.5%; */
+}
+
+header {
+    padding : 0.5%
+}
+
+.main_police {
+  font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    color: var(--my_black);
+}
+
+
+
+body {
+    background-color: var(--my_black);
+    color : var(--my_white);
+    font-family: "Montserrat", sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Évite les petits espaces blancs sous l'image */
+    margin: auto;   /* Centre l'image */
+}
+
+.button_link_black, .button_link_colored {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.button_link_black {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color_1);
+    /* border : 2px var(--color_1) solid; */
+    background-color: var(--my_black);
+    
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.button_link_colored {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--my_black);
+    /* border : 2px var(--my_black) solid; */
+    background-color: var(--color_1);
+    padding: 2px;
+}
+
+.button_link_colored:hover, .button_link_black:hover {
+    text-decoration: none;
+    font-weight: 600;
+    /* border : 2px var(--my_white) solid; */
+    color : var(--my_white);
+    background-color: var(--color_2);
+}
+
+.text_link_main{
+    text-decoration: none;
+    color : var(--color_1);
+}
+
+.text_link_footer{
+    text-decoration: none;
+    color : var(--my_black);
+}
+
+.text_link_main:hover {
+    text-decoration: none;
+    color : var(--my_white);
+    background-color: var(--color_2);
+}
+
+.text_link_footer:hover {
+    text-decoration: none;
+    color : var(--my_white);
+    background-color: var(--color_2);
+}
+
+.logo_morphosia {
+    font-family: "font_morphosia", sans-serif; /* "sans-serif" est une solution de secours au cas où */
+}
+
+.logo_subphoria{
+    font-family: "Bruno Ace SC", sans-serif;
+}
+
+.index_main_section_sub {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+    align-items: start;
+    margin: auto;
+
+    gap: 20px ;
+}
+
+.index_main_section_morph {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    width: 100%;
+    align-items: start;
+    margin: auto;
+
+    gap: 20px ;
+}
+
+.bio_main_section, .NandP_main_section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+}
+
+
+.index_main_section_morph img, .index_main_section_sub img {
+    width: 100%;       
+    height: auto;      
+    /*object-fit: cover; */
+    margin: auto;
+    padding: auto;
+    padding-right: 0;
+    margin-right: 0;
+    
+}
+
+/*
+.index_main_section .element_left {
+    margin-right: auto;
+}
+
+.index_main_section .element_right {
+    margin-left: auto;
+}
+*/
+
+.pied {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+}
+
+@media screen and (max-width:992px) {
+    /* --- HEADER & NAV --- */
+    header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav, header h1 {
+        margin: auto;
+        width: 100%; /* Utiliser toute la largeur disponible */
+    }
+    
+    h1 {
+        font-size: 2em; /* Réduit la taille du titre pour mobile */
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    /* Correction du menu : Suppression du doublon et ajout d'espace */
+    nav p {
+        display: flex;
+        flex-direction: column; 
+        gap: 10px; /* Ajoute de l'espace entre les boutons */
+        padding: 0;
+    }
+
+    nav p a {
+        display: block; /* Rend le lien "bloc" pour qu'il soit facile à cliquer */
+        width: 80%;     /* Largeur confortable mais pas collée aux bords */
+        margin: auto;   /* Centre les boutons */
+        box-sizing: border-box; /* Empêche les bordures d'agrandir l'élément */
+    }
+
+    .button_link_black {
+        /* On enlève les marges spécifiques ici car gérées par le "gap" du parent au dessus */
+        margin-bottom: 0; 
+        margin-top: 0;
+    }
+
+    /* --- CONTENU PRINCIPAL --- */
+    .index_main_section_sub, .index_main_section_morph, .bio_main_section, .NandP_main_section {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* S'assure que la section prend toute la largeur */
+        align-items: center;
+        margin: auto;
+    }
+
+    .index_main_section_sub .element_left, 
+    .index_main_section_sub .element_right,
+    .index_main_section_morph .element_left, 
+    .index_main_section_morph .element_right {
+        width: 100%; /* Important pour que le texte et l'image prennent la place */
+        margin: auto;
+        text-align: justify; /* Optionnel : justifie le texte pour faire plus propre */
+        margin-bottom: 20px; /* Ajoute de l'espace entre le texte et la photo */
+    }
+
+    .index_main_section_sub img {
+        width: 100%;
+        margin: auto;
+        padding: auto;
+    }
+
+    .index_main_section_morph img {
+        width: 80%;
+        margin: auto;
+        padding: auto;
+    }
+
+    /* --- FOOTER --- */
+    .pied {
+        display: flex;       /* Passe en flex column plutôt qu'en grid complexe */
+        flex-direction: column;
+        text-align: center;  /* Centre le texte du footer */
+        gap: 20px;           /* Espace entre les blocs du footer */
+    }
+}
+
+.next_dates {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 1%;
+    padding: auto;
+    /* border-top : solid 2px var(--color_2); */
+}
+
+.next_dates h2 {
+    color : var(--color_2);
+}
+
+.a_next_date {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    padding:1%;
+    /* border: 1px red solid; */
+    background-color: var(--color_2);
+}
+
+.a_next_date p {
+    font-weight: 600;
+    padding: 1px;
+    display: inline-block;
+    margin : auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.next_date_link {
+    text-decoration: none;
+    display: inline-block;
+    border: 2px white solid;
+    color : white;
+    font-weight: 600;
+    padding: 5px;
+    margin : auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+}
+
+.next_date_link:hover {
+    background: white;
+    color : var(--color_2);
+    border-color: var(--color_2);
+    padding: 10px;
+}
+
+.colored_text_link {
+    text-decoration: none;
+    color : var(--color_2);
+    font-weight: bold;
+}
+
+.colored_text_link:hover {
+    text-decoration: none;
+    color : var(--color_1);
+}
+
+/* --- CORRECTIFS DU FOOTER --- */
+
+/* 1. On nettoie les conteneurs (les div) du footer */
+.pied > div {
+    /* Ajoute un peu d'espace interne si nécessaire */
+    padding: 10px 0; 
+}
+
+/* 2. On corrige les paragraphes */
+.pied p {
+    /* Retire les marges énormes par défaut du navigateur */
+    margin: 0; 
+    
+    /* Active Flexbox DANS le paragraphe. 
+       Cela permet d'aligner le texte "For Subphoria" et les boutons proprement */
+    display: flex; 
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne s'il n'y a pas de place */
+    align-items: center; /* Centre tout verticalement */
+    gap: 15px; /* Crée un espace propre et régulier entre le texte et les boutons */
+}
+
+/* 3. On corrige les boutons liens */
+.pied .button_link_colored {
+    /* CRUCIAL : Transforme le lien en "bloc" pour que ses bordures/paddings
+       soient respectés et ne chevauchent plus rien */
+    display: inline-block; 
+}
+
+.logo_pied {
+    margin: 0;
+    padding: 0;
+}
+
+.svg-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0); /* Change 'white' par 'black' ici */
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.svg-icon:hover {
+    filter: brightness(1);
+}

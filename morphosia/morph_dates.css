@@ -1,0 +1,81 @@
+.dates_grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.dates_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.date_cellule {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.date_main_section {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.date_main_section img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.artist_link {
+    display: block;
+    text-decoration: none;
+    color: var(--color_1);
+    font-weight: bold;
+}
+
+.artist_link:hover {
+    color: white;
+}
+
+.artist_no_link {
+    display: block;
+    text-decoration: none;
+    color: var(--color_1);
+    font-weight: bold;
+    margin: auto;
+}
+
+.deux_colonnes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin : auto;
+}
+
+h4 {
+    margin : auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+@media screen and (max-width:992px) {
+
+    .date_main_section {
+        grid-template-columns: 1fr;
+    }
+
+    .date_grid {
+        grid-template-columns: 1fr;
+    }
+
+}
